@@ -1,0 +1,11 @@
+CREATE TABLE categories(
+	cname VARCHAR(50)
+);
+
+CREATE TABLE transactions(
+    tid int NOT NULL AUTO_INCREMENT,
+    tamount int,
+    tdescription VARCHAR(100),
+    tdate DATE,
+    PRIMARY KEY (tid)
+);
