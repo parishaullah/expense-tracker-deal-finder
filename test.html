@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<h2>Expense Tracker</h2>
+<p>Select Category :</p>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Beauty</a>
+    <a href="#">Bills</a>
+    <a href="#">Books</a>
+    <a href="#">Clothes</a>
+    <a href="#">Communications</a>
+    <a href="#">Eating Out</a>
+    <a href="#">Electronics</a>
+    <a href="#">Entertainment</a>
+    <a href="#">Food</a>
+    <a href="#">Gifts</a>
+    <a href="#">Health</a>
+    <a href="#">House</a>
+    <a href="#">pets</a>
+    <a href="#">Sports</a>
+    <a href="#">Taxi</a>
+    <a href="#">Toiletry</a>
+    <a href="#">Transport</a>
+  </div>
+</div>
+
+</body>
+</html>
