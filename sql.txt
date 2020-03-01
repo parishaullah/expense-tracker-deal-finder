@@ -1,11 +1,36 @@
 CREATE TABLE categories(
-	cname VARCHAR(50)
+	cname VARCHAR(50) NOT NULL,
+	PRIMARY KEY (cname)
 );
 
 CREATE TABLE transactions(
-    tid int NOT NULL AUTO_INCREMENT,
-    tamount int,
+    tid          int NOT NULL AUTO_INCREMENT,
+    tamount      int NOT NULL,
     tdescription VARCHAR(100),
-    tdate DATE,
+    tdate        DATE,
     PRIMARY KEY (tid)
+);
+
+CREATE TABLE user (
+	uid              int NOT NULL AUTO_INCREMENT,
+	balance          int NOT NULL,
+	total_budget     int,
+	remaining_budget int,
+	PRIMARY KEY (uid)
+);
+
+CREATE TABLE makes (
+	uid int NOT NULL,
+	tid int NOT NULL,
+	FOREIGN KEY (uid) REFERENCES user         (uid) ON DELETE CASCADE,
+	FOREIGN KEY (tid) REFERENCES transactions (tid) ON DELETE CASCADE,
+	PRIMARY KEY (uid, tid)
+);
+
+CREATE TABLE belongs_to (
+	cname VARCHAR(50) NOT NULL,
+	tid   int         NOT NULL,
+	FOREIGN KEY (cname) REFERENCES categories   (cname) ON DELETE CASCADE,
+	FOREIGN KEY (tid)   REFERENCES transactions (tid)   ON DELETE CASCADE,
+	PRIMARY KEY (cname, tid)
 );
