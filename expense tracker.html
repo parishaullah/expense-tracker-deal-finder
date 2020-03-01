@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html>
-<body>
+	<body>
 
-<h1>Expense Tracker</h1>
-<h2>Select Category</h2>
+		<h1>Expense Tracker</h1>
 
-<form>
-  <input type="radio" id="Beauty" name="Beauty" value="Beauty">
-  <label for="Beauty">Beauty</label><br>
+		<form action="connect.php" method="post">
+			<p>Select category:</p>
+			<input type="radio" id="Beauty" name="category" value="Beauty">
+			<label for="Beauty">Beauty</label><br>
 
-  <input type="radio" id="Bills" name="Bills" value="Bills">
-  <label for="Bills">Bills</label><br>
+			<input type="radio" id="Bills" name="category" value="Bills">
+			<label for="Bills">Bills</label><br>
 
- <input type="radio" id="Electronics" name="Electronics" value="Electronics">
-  <label for="Electronics">Electronics</label><br>
+			<input type="radio" id="Electronics" name="category" value="Electronics">
+			<label for="Electronics">Electronics</label><br>
 
-  <input type="radio" id="Entertainment" name="Entertainment" value="Entertainment">
-  <label for="Entertainment">Entertainment</label><br>
+			<input type="radio" id="Entertainment" name="category" value="Entertainment">
+			<label for="Entertainment">Entertainment</label><br>
 
-  <input type="radio" id="Books" name="Books" value="Books">
-  <label for="Books">Books</label><br>
+			<input type="radio" id="Books" name="category" value="Books">
+			<label for="Books">Books</label><br>
 
-  <input type="radio" id="Car" name="Car" value="Car">
-  <label for="Car">Car</label><br>
+			<input type="radio" id="Car" name="category" value="Car">
+			<label for="Car">Car</label><br>
 
-  <input type="radio" id="Clothes" name="Clothes" value="Clothes">
-  <label for="Clothes">Clothes</label><br>
+			<input type="radio" id="Clothes" name="category" value="Clothes">
+			<label for="Clothes">Clothes</label><br>
 
-  <input type="radio" id="Communications" name="Communications" value="Communications">
-  <label for="Communications">Communications</label><br>
+			<input type="radio" id="Communications" name="category" value="Communications">
+			<label for="Communications">Communications</label><br>
 
-  <input type="radio" id="Deposit" name="Deposit" value="Deposit">
-  <label for="Deposit">Deposit</label><br>
+			<input type="radio" id="Deposit" name="category" value="Deposit">
+			<label for="Deposit">Deposit</label><br>
 
-  <input type="radio" id="Eating out" name="Eating out" value="Eating out">
-  <label for="Eating out">Eating out</label><br>
+			<input type="radio" id="eatingOut" name="category" value="Eating out">
+			<label for="Eating out">Eating out</label><br>
 
-  <input type="radio" id="Food" name="Food" value="Food">
-  <label for="Food">Food</label><br>
+			<input type="radio" id="Food" name="category" value="Food">
+			<label for="Food">Food</label><br>
 
-  <input type="radio" id="Gifts" name="Gifts" value="Gifts">
-  <label for="Gifts">Gifts</label><br>
+			<input type="radio" id="Gifts" name="category" value="Gifts">
+			<label for="Gifts">Gifts</label><br>
 
-  <input type="radio" id="Health" name="Health" value="Health">
-  <label for="Health">Health</label><br>
-  
-  <input type="radio" id="House" name="House" value="House">
-  <label for="House">House</label><br>
+			<input type="radio" id="Health" name="category" value="Health">
+			<label for="Health">Health</label><br>
+		  
+			<input type="radio" id="House" name="category" value="House">
+			<label for="House">House</label><br>
 
-  <input type="radio" id="Pets" name="Pets" value="Pets">
-  <label for="pets">Pets</label><br>
+			<input type="radio" id="Pets" name="category" value="Pets">
+			<label for="pets">Pets</label><br>
 
-  <input type="radio" id="Sports" name="Sports" value="Sports">
-  <label for="Sports">Sports</label><br>
+			<input type="radio" id="Sports" name="category" value="Sports">
+			<label for="Sports">Sports</label><br>
 
-  <input type="radio" id="taxi" name="Taxi" value="Taxi">
-  <label for="Taxi">taxi</label><br>
+			<input type="radio" id="taxi" name="category" value="Taxi">
+			<label for="Taxi">Taxi</label><br>
 
-  <input type="radio" id="Toiletry" name="Toiletry" value="Toiletry">
-  <label for="Toiletry">Toiletri</label><br>
+			<input type="radio" id="Toiletry" name="category" value="Toiletry">
+			<label for="Toiletry">Toiletry</label><br>
 
-  <input type="radio" id="Transportation" name="Transportation" value="Transportation">
-  <label for="Transportation">Transportation</label><br>
+			<input type="radio" id="transportation" name="category" value="Transportation">
+			<label for="Transportation">Transportation</label><br>
 
-   <p>Enter transactions</p>
+			<p></p>
+			
+			<label for="Amount">Transaction amount:</label><br>
+			<input type="number" id="amount" name="amount"><br>
 
-  <label for="Amount">Amount:</label><br>
-  <input type="number" id="Amount" name="Amount"><br>
+			<label for="description">Transaction description:</label><br>
+			<input type="text" id="description" name="description"><br><br>
+		  
+			<input type="submit" value="Submit">
 
-  <label for="spenton">Spent on:</label><br>
-  <input type="text" id="spenton" name="spenton"><br><br>
-  
-  <input type="submit" value="Submit">
-
-</form> 
-
-</body>
+		</form>
+	</body>
 </html>
