@@ -12,7 +12,7 @@ CREATE TABLE transaction (
     PRIMARY KEY (tid)
 );
 
-CREATE TABLE user (
+CREATE TABLE users (
 	uid     int NOT NULL AUTO_INCREMENT,
 	balance int NOT NULL,
 	PRIMARY KEY (uid)
@@ -27,7 +27,7 @@ CREATE TABLE budget (
 CREATE TABLE makes (
 	uid int NOT NULL,
 	tid int NOT NULL,
-	FOREIGN KEY (uid) REFERENCES user        (uid) ON DELETE CASCADE,
+	FOREIGN KEY (uid) REFERENCES users       (uid) ON DELETE CASCADE,
 	FOREIGN KEY (tid) REFERENCES transaction (tid) ON DELETE CASCADE,
 	PRIMARY KEY (uid, tid)
 );
@@ -43,7 +43,7 @@ CREATE TABLE belongs_to (
 CREATE TABLE sets (
 	uid int NOT NULL,
 	bid int NOT NULL,
-	FOREIGN KEY (uid) REFERENCES user   (uid) ON DELETE CASCADE,
+	FOREIGN KEY (uid) REFERENCES users  (uid) ON DELETE CASCADE,
 	FOREIGN KEY (bid) REFERENCES budget (bid) ON DELETE CASCADE,
 	PRIMARY KEY (uid, bid)
 );
