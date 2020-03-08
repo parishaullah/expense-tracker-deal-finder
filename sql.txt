@@ -55,3 +55,8 @@ CREATE TABLE of (
 	FOREIGN KEY (bid) REFERENCES budget   (bid) ON DELETE CASCADE,
 	PRIMARY KEY (cid, bid)
 );
+
+CREATE TRIGGER log_transaction 
+BEFORE INSERT ON transaction 
+FOR EACH ROW
+SET new.tdate = now();
