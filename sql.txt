@@ -35,8 +35,8 @@ CREATE TABLE makes (
 CREATE TABLE belongs_to (
 	cid int NOT NULL,
 	tid int NOT NULL,
-	FOREIGN KEY (cid) REFERENCES category     (cid) ON DELETE CASCADE,
-	FOREIGN KEY (tid) REFERENCES transactions (tid) ON DELETE CASCADE,
+	FOREIGN KEY (cid) REFERENCES category    (cid) ON DELETE CASCADE,
+	FOREIGN KEY (tid) REFERENCES transaction (tid) ON DELETE CASCADE,
 	PRIMARY KEY (cid, tid)
 );
 
