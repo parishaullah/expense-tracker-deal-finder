@@ -7,7 +7,7 @@ CREATE TABLE category (
 CREATE TABLE transaction (
     tid          int NOT NULL AUTO_INCREMENT,
     tamount      int NOT NULL,
-    tdescription VARCHAR(100),
+    tdescription VARCHAR(150),
     tdate        DATETIME,
     PRIMARY KEY (tid)
 );
