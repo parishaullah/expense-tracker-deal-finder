@@ -51,11 +51,14 @@ if(isset($_POST['addtransactionhsubmit']))
 			<ul class="navbar-nav">
 				<a class="navbar-brand" href="home.php">Home</a>
 				<ul class="navbar-nav">
-					<li class="nav-item" active>
+					<li class="nav-item active">
 						<a class="nav-link" href="addTransactionH.php">Add Transactions</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="viewTransactionH.php">View Transactions</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="graph.php">Graph</a>
 					</li>
 				</ul>
 			</ul> 

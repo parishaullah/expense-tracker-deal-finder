@@ -25,6 +25,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="viewTransactionH.php">View Transactions</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="graph.php">Graph</a>
+					</li>
 				</ul>
 			</ul> 
 		</nav>
@@ -37,6 +40,16 @@
 				<div>
 					<li>
 						<label>Choose a category:</label>
+						<div>
+							<input type="radio" name="category" id="bills" value = "Bills">
+							<label for="bills">Bills</label>
+						</div>
+						
+						<div>
+							<input type="radio" name="category" id="electronics" value = "Electronics">
+							<label for="electronics">Electronics</label>
+						</div>
+						
 						<div>
 							<input type="radio" name="category" id="house" value = "House">
 							<label for="house">House</label>

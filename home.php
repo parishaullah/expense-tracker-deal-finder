@@ -25,6 +25,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="viewTransactionH.php">View Transactions</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="graph.php">Graph</a>
+					</li>
 				</ul>
 			</ul> 
 		</nav>

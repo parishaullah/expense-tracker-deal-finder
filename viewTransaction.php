@@ -10,7 +10,8 @@ if(isset($_POST['submit1']))
     
 	$performQuery=mysqli_query($connection, $query);
 } elseif (isset($_POST['submit2']))
-{	$rawfrom = $_POST['from'];
+{	$category = "All";
+	$rawfrom = $_POST['from'];
 	$rawto = $_POST['to'];
 	
 	$from = date('Y-m-d', strtotime($rawfrom));
@@ -22,7 +23,8 @@ if(isset($_POST['submit1']))
 	
 	$performQuery=mysqli_query($connection, $query);
 } elseif (isset($_POST['submit3']))
-{	$query = "select transaction.tid, tamount, tdescription, tdate from transaction
+{	$category = "All";
+	$query = "select transaction.tid, tamount, tdescription, tdate from transaction
 				join belongs_to on transaction.tid = belongs_to.tid
 				join category on belongs_to.cid = category.cid;";
 	
@@ -49,6 +51,9 @@ if(isset($_POST['submit1']))
 					<li class="nav-item active">
 						<a class="nav-link" href="viewTransactionH.php">View Transactions</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="graph.php">Graph</a>
+					</li>
 				</ul>
 			</ul> 
 		</nav>
@@ -56,7 +61,7 @@ if(isset($_POST['submit1']))
 			<?php
 				if (mysqli_num_rows($performQuery) > 0) {
 			?>
-			<h4>Transactions</h4>
+			<h4><?php echo $category, " Transactions"; ?></h4>
 			<div class="table-responsive-md">
 				<table class="table table-striped table-bordered">
 					<thead class="thead-light">
@@ -85,7 +90,7 @@ if(isset($_POST['submit1']))
 					</tbody>
 				</table>
 			</div>
-			 <?php
+			<?php
 				}
 				else{
 					echo "No result found";
