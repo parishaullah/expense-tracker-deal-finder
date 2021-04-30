@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}View Transactions{% endblock %}
+{% block content %}
+    <form method="post">
+        <h4>View Transactions</h4>
+        <div>
+            <li>
+                <label for="category">Choose a category:</label>
+                <p>
+                    <select name="category" id="category">
+                        <option value="Beauty">Beauty</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Communications">Communications</option>
+                        <option value="Food">Food</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" name="action" value="category"> Go </button>
+                </p>
+            </li>
+        </div>
+
+        <div>
+            <li>
+                <label for="dates">Select dates:</label>
+                <p>
+                    <label for="from">From</label>
+                    <input type="date" name="from" id="from">
+                    <label for="to">to</label>
+                    <input type="date" name="to" id="to">
+                    <button type="submit" class="btn btn-primary" name="action" value="period"> Go </button>
+                </p>
+            </li>
+        </div>
+
+        <div>
+            <li>
+                <button type="submit" class="btn btn-primary" name="action" value="all">View all</button>
+            </li>
+        </div>
+
+    </form>
+{% endblock %}

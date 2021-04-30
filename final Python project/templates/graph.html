@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block js %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawVisualization);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                    ['Category', 'Amount'],
+                    {% for row in rows %}
+                        ['{{ row['cname'] }}', {{ row['total'] }}],
+                    {% endfor %}
+                ],
+                false);
+
+            var options = {
+                pieHole: 0.4,
+                'height': 300,
+                'width': 550,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+            chart.draw(data, options);
+        }
+
+        function drawVisualization() {
+            var data = google.visualization.arrayToDataTable([
+                ['Month', 'Bills', 'Electronics', 'Communications', 'Food', 'Monthly Total'],
+                ['2021/0{{ comboRows[0][0] }}', {{ comboRows[0][1] }}, {{ comboRows[0][2] }}, {{ comboRows[0][3] }}, {{ comboRows[0][4] }}, {{ monthSums[0] }}],
+                ['2021/0{{ comboRows[1][0] }}', {{ comboRows[1][1] }}, {{ comboRows[1][2] }}, {{ comboRows[1][3] }}, {{ comboRows[1][4] }}, {{ monthSums[1] }}],
+                ['2021/0{{ comboRows[2][0] }}', {{ comboRows[2][1] }}, {{ comboRows[2][2] }}, {{ comboRows[2][3] }}, {{ comboRows[2][4] }}, {{ monthSums[2] }}]
+            ]);
+
+            var options = {
+                title: 'Monthly Expenditure Breakdown by Category',
+                vAxis: {title: 'BDT'},
+                hAxis: {title: 'Month'},
+                seriesType: 'bars',
+                series: {4: {type: 'line'}}
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('combo_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+{% endblock %}
+{% block title %}Graph{% endblock %}
+{% block content %}
+    <h4>Graph</h4>
+    <form method="post">
+        <div>
+            <p>
+                <label for="from">From</label>
+                <input type="date" name="from" id="from">
+                <label for="to">to</label>
+                <input type="date" name="to" id="to">
+                <button type="submit" class="btn btn-primary" name="submit"> Go</button>
+            </p>
+        </div>
+    </form>
+    <table class="columns">
+        <tr>
+            <td>
+                <div id="pie_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+            <td>
+                <div id="combo_chart_div" style="border: 1px solid #ccc; width: 600px; height: 300px;   "></div>
+            </td>
+        </tr>
+    </table>
+    <h4>Total spent: {{ sum }} BDT</h4>
+    <h4>Largest transaction was {{ maxTransaction['maxAmount'] }} BDT spent
+        on {{ maxTransaction['tdescription'] }}</h4>
+{% endblock %}

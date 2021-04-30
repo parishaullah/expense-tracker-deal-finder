@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Add Transactions{% endblock %}
+{% block content %}
+    <form method="post">
+        <h4>Add Transactions</h4>
+        <div>
+            <li>
+                <label>Choose a category:</label>
+                <div>
+                    <input type="radio" name="category" id="bills" value = "Bills">
+                    <label for="bills">Bills</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="electronics" value = "Electronics">
+                    <label for="electronics">Electronics</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="house" value = "House">
+                    <label for="house">House</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="transportation" value = "Transportation">
+                    <label for="transportation">Transportation</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="food" value = "Food">
+                    <label for="food">Food</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="utilities" value = "Utilities">
+                    <label for="utilities">Utilities</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="medical" value = "Medical">
+                    <label for="medical">Medical & Healthcare</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="communications" value = "Communications">
+                    <label for="communications">Communications</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="clothes" value = "Clothes">
+                    <label for="clothes">Clothes</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="gifts" value = "Gifts">
+                    <label for="gifts">Gifts</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="recreation" value="Recreation">
+                    <label for="recreation">Recreation & Entertainment</label>
+                </div>
+                <div>
+                    <input type="radio" name="category" id="misc" value="Miscellaneous">
+                    <label for="misc">Miscellaneous</label>
+                </div>
+            </li>
+        </div>
+        <li>
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount" value="{{ request.form['amount'] }}" required>
+        </li>
+        <li>
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" value="{{ request.form['description'] }}">
+        </li>
+        <button type="submit" class="btn btn-primary" name="addtransactionhsubmit"> Submit </button>
+        <button type="reset" class="btn btn-secondary" name="addtransactionhreset"> Reset </button>
+    </form>
+{% endblock %}
